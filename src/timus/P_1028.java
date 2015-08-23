@@ -10,6 +10,19 @@ import java.util.StringTokenizer;
 
 // http://acm.timus.ru/problem.aspx?space=1&num=1028
 // #fenwick
+/*
+ *  We sort all the starts ascending according to their x coordinates
+ *  if x's are equal according to ascending y coordinates
+ *  
+ *  We iterate over the stars.
+ *  For the current star all previous stars are with previous x coordinates.
+ *  So the level of the star depends on the previous stars with y coordinate not bigger 
+ *  than the one of the current star.
+ *  We use bit tree to count the number of stars with not bigger y coordinate.
+ *  Then we increase the sums containing current y coordinate with 1.
+ *  Algorithm complxity N*logN+N*log32000 -> N*logN
+ */
+
 public class P_1028 {
 
     public static void main(String[] args) {
