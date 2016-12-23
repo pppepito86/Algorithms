@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class UF {
 
-	int count;
-	int[] parent, size;
+	private int count;
+	private int[] parent, size;
 
 	public UF(int n) {
 		count = n; parent = new int[n]; size = new int[n];
@@ -13,11 +13,11 @@ public class UF {
 		Arrays.fill(size, 1);
 	}
 	
-	int find(int u){
+	public int find(int u){
 		return parent[u] = parent[u]==u?u:find(u);
 	}
 	
-	void union(int u, int v) {
+	public void union(int u, int v) {
 		int ru = find(u); int rv = find(v);
 		if (ru == rv) return;
 		if (size[ru] >= size[rv]) {
@@ -28,7 +28,7 @@ public class UF {
 		count--;
 	}
 	
-	boolean connected(int u, int v) {
+	public boolean connected(int u, int v) {
 		return find(u) == find(v);
 	}
 	
