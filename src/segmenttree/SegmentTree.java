@@ -14,7 +14,7 @@ public class SegmentTree {
 	private MathOperation operation;
 
 	public SegmentTree(int n, MathOperation operation, int defaultValue) {
-		this.size = n;
+		this.size = n > 1? Integer.highestOneBit(n-1) * 2: 1;
 		this.operation = operation;
 		this.defaultValue = defaultValue;
 		this.values = new long[2*size];

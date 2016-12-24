@@ -8,7 +8,7 @@ public class MinSegmentTree {
 	private long[] values;
 
 	public MinSegmentTree(int n) {
-		this.size = n;
+		this.size = n > 1? Integer.highestOneBit(n-1) * 2: 1;
 		this.values = new long[2*size];
 		Arrays.fill(values, Integer.MAX_VALUE);
 	}
@@ -32,7 +32,6 @@ public class MinSegmentTree {
 			else values[node] += value;
 			return; 
 		}
-		
 		int mid = (left + right) / 2;
 		updateInternal(2*node, left, mid, element, value, replace);
 		updateInternal(2*node+1, mid+1, right, element, value, replace);

@@ -14,7 +14,7 @@ public class UF {
 	}
 	
 	public int find(int u){
-		return parent[u] = parent[u]==u?u:find(u);
+		return parent[u] = parent[u]==u?u:find(parent[u]);
 	}
 	
 	public void union(int u, int v) {
