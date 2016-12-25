@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.Stack;
 
 
-public class Waiter {
+public class Waiter2 {
 	
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
@@ -12,17 +12,20 @@ public class Waiter {
 		Stack<Integer> last = new Stack<>();
 		for (int i = 0; i < n; i++) last.push(in.nextInt());
 		Stack<Integer> current = new Stack<>();
-		Stack<Integer> b = new Stack<>();
+		Stack<Integer>[] b = new Stack[q];
+		for (int i = 0; i < q; i++) b[i] = new Stack<>();
 		int[] p = getPrimes(q);
 		for (int i = 0; i < q; i++) {
 			while (!last.isEmpty()) {
 				int next = last.pop();
-				if (next % p[i] == 0) b.push(next);
+				if (next % p[i] == 0) b[i].push(next);
 				else current.push(next);
 			}
 			last = current;
 			current = new Stack<>();
-			while (!b.isEmpty()) System.out.println(b.pop());
+		}
+		for (int i = 0; i < q; i++) {
+			while (!b[i].isEmpty()) System.out.println(b[i].pop());
 		}
 		while (!last.isEmpty()) System.out.println(last.pop());
 
