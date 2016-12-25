@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
+//https://www.hackerrank.com/challenges/poisonous-plants
 public class PoisonousPlants2 {
 
 	public static void main(String[] args) {

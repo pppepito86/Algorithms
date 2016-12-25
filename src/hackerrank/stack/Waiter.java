@@ -3,7 +3,7 @@ package hackerrank.stack;
 import java.util.Scanner;
 import java.util.Stack;
 
-
+//https://www.hackerrank.com/challenges/waiter
 public class Waiter {
 	
 	public static void main(String[] args) {
